@@ -8,7 +8,6 @@ layout: post
 ## SWBATs
 
 * Understand build tools and show how webpack works
-* Use historical context and the Mod 3 experience to explain why React and declarative programming is special
 * Start to understand the Virtual DOM
 * See what a React Component actually is (an object, made by a class or function)
 * Build custom components and see initial JSX
@@ -32,7 +31,7 @@ layout: post
 
 ### Discuss Vanilla JS
 
-I like to start by asking students what was hard about building a project in Module 3 and record their responses. Generally you'll get at least a few responses that are pretty on point. Examples:
+Start by asking students what was hard about building a project in Phase 1 and record their responses. Generally you'll get at least a few responses that are pretty on point. Examples:
 
 * Updating the DOM to reflect changes in your data
 * Managing State
@@ -45,7 +44,7 @@ point out what React is designed to solve and what it isn't.
 
 ### Brief History/Context
 
-React is made by Facebook. I like to point out that if anyone's ever heard about the licensing thing (i.e. you can't build an app that competes with FB in React) that's no longer true and React uses the MIT open source license. There are two libraries `react`, `react-dom`, this is to divide up the functionality and enables `react-native`, `react-vr`, etc.
+React is made by Facebook. Point out that if anyone's ever heard about the licensing thing (i.e. you can't build an app that competes with FB in React) that's no longer true and React uses the MIT open source license. There are two libraries `react`, `react-dom`, this is to divide up the functionality and enables `react-native`, `react-vr`, etc.
 
 ### Project Set Up
 
@@ -55,9 +54,9 @@ _Though I point out and stress that I am not doing this like how the weekend lab
 
 * _I am not going to write `import React from 'react'`_
 * _I am not going to run `npm start`_
-* _I am just doing this like in last module._
+* _I am just doing this like in last Phase._
 
-_When I break into some exercises later everyone asks why they cant run npm start and why they won't be importing React, I remind them that we are just including some js files in out html like last module._
+_When I break into some exercises later everyone asks why they cant run npm start and why they won't be importing React, I remind them that we are just including some js files in out html like last Phase._
 
 First, `npm install --save react react-dom semantic-ui-css`. Discuss how npm differs from installing gem. Show node_modules folder, (mention that if a student can't see their directory-- it's there-- they just need to enable seeing .gitignore'd files in atom). Show that we're just linking to js/css files in our index.html. I've had some issues if I do not use these specific links:
 
@@ -74,7 +73,7 @@ Now in index.js
 ReactDOM.render(whatToAddToDOM, whereToPutIt);
 ```
 
-Demonstrate that the second arg is the **only place we will be using code from mod 3 such as `document.getElementById('main')`**. This is also why we won't be bringing in jQuery. It'd be overkill to import a huge library to run one line of code `$('#main')`
+Demonstrate that the second arg is the **only place we will be using code from Phase 1 such as `document.getElementById('main')`**. This is also why we won't be bringing in jQuery. It'd be overkill to import a huge library to run one line of code `$('#main')`
 
 whatToAddToDOM: we need to add a React Element! First thing I'd do is to write like:
 
@@ -101,8 +100,7 @@ Put a debugger and look what `React.createElement` returns. Ask what that looks 
 
 ### myCreateElement
 
-If `React.createElement` just returns an object we should be able to write this on our own. Here's the bare minimum needed. (Refs we wont talk about today, symbols they maybe haven't seen (but they're basically just like Ruby symbols), and we'll talk more about props soon)
-
+If `React.createElement` just returns an object we should be able to write this on our own. Here's the bare minimum needed.
 ```js
 const myCreateElement = (type, props = {}, children) => {
   return {
